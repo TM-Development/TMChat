@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TMChat:jar">
+    <output-path>D:/Servers/plugins</output-path>
+    <root id="archive" name="TMBackups.jar">
+      <element id="module-output" name="TMChat" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,32 @@
+prefix: "<GRADIENT:#B993D6-#8CA6DB>TMChat</GRADIENT> &7\u00BB&f"
+
+more:
+  staff_notification: "<GRADIENT:#FF948D-#AA1B2E>Log</GRADIENT> &8» &7&o[%pl_alert%] &f%pl_player%: %pl_message%"
+
+fails:
+  message_empty: "%pl_prefix% &fMessage cannot be empty."
+  player_not_found: "%pl_prefix% &fPlayer not found."
+  only_player: "%pl_prefix% &fThis command can be executed only in game."
+  something_gone_wrong: "%pl_prefix% &cSomething gone &#ff5e62wrong&f. An log should send to console!"
+
+basic:
+  no_permission: "%pl_prefix% &cYou don't have permission."
+
+commands:
+  plugin:
+    reload:
+      success: '%pl_prefix% &fPlugin was reloaded from the files and some internal stuff. &7&oIf you want a smaller reload please use &#B993D6"/tmchat reload files" &7&ojust for the files'
+  chat:
+    notifications:
+      help: '%pl_prefix% &fPlease use &#B993D6"/tmchat chat notifications"&f.'
+      success:
+        disabled: "%pl_prefix% &fYou are not longer &cgetting &fnotifications when someone is breaking a rule"
+        enabled: "%pl_prefix% &fYou are now &agetting &fnotifications when someone is breaking a rule"
+    fakemessage:
+      help: '%pl_prefix% &fPlease use &#B993D6"/tmchat chat fakemessage [player] [message]"&f.'
+    # You have to change the messages from config.yml #
+    mutechat:
+      help: '%pl_prefix% &fPlease use &#B993D6"/tmchat chat mute"&f.'
+    # You have to change the messages from config.yml #
+    clearchat:
+      help: '%pl_prefix% &fPlease use &#B993D6"/tmchat chat clear"&f.'

@@ -1,0 +1,106 @@
+
+#  █░█ █ █▀▀ █░█   █▀█ █░█ ▄▀█ █░░ █ ▀█▀ █▄█   █▀▀ █░█ ▄▀█ ▀█▀   █▀█ █░░ █░█ █▀▀ █ █▄░█
+#  █▀█ █ █▄█ █▀█   ▀▀█ █▄█ █▀█ █▄▄ █ ░█░ ░█░   █▄▄ █▀█ █▀█ ░█░   █▀▀ █▄▄ █▄█ █▄█ █ █░▀█
+#  By TMDevelopment | devtm.net | discord.devtm.net |
+
+logging:
+  messages_log: true
+
+# If you want to make the developers happy leave the bstats enabled, so we can see how used is our plugin!
+allow_bstats: true
+
+select_locale: en.yml
+
+chat:
+  # Please check if modules.chat is enabled for all the chat. to work!
+  # We have a component based chat formatter if you need more info you can check it here: (link here)
+  # If you want to use JSON Text Component you need to put {JSON} then the json. Keep in mind that what placeholder it will find in the json message it will be
+  # replaced with the value of that placeholder (To get the message %pl_message% and for the player %pl_player%) PlaceholderAPI is fully supported!
+  # I use to https://minecraft.tools/en/json_text.php its good :)
+  format:
+    string: "{CUSTOM} [component1] &f%pl_player% &7» &r%pl_message%"
+    components:
+      component1:
+        content: "%luckperms_prefix%"
+        hover: "Player has %money% money : Click to say hello"
+        open_url: "https://devtm.net/"
+      component2:
+        content: "%luckperms_prefix%"
+        hover: "Player has %money% money : Click to say hello"
+        click: "say hello"
+      component3:
+        content: "%luckperms_prefix%"
+        hover: "Player has %money% money : Click to say hello"
+        suggest_command: "say hello"
+
+chat_filters:
+  anti_urls:
+    enabled_filter: true
+    filter_regex: "(http(s)?:\\/\\/.)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}( ?\\. ?| ?\\(?dot\\)? ?)[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)"
+    punishment:
+      - "[CANCEL]"
+      - "[NOTIFY_STAFF]"
+      - "[MESSAGE] %pl_prefix% &fPlease don't &#ff5e62advertise&f on this server!"
+  anti_ips:
+    enabled_filter: true
+    filter_regex: "(?:[0-9]{1,3}( ?\\. ?|\\(?dot\\)?)){3}[0-9]{1,3}"
+    punishment:
+      - "[CANCEL]"
+      - "[NOTIFY_STAFF]"
+      - "[MESSAGE] %pl_prefix% &fPlease don't &#ff5e62advertise&f on this server!"
+  anti_caps:
+    enabled_filter: true
+    maxim_caps_on_message: 10
+    punishment:
+      - "[CANCEL]"
+      - "[NOTIFY_STAFF]"
+      - "[MESSAGE] %pl_prefix% &fYou are not allowed to use more then 10 &#ff5e62caps&f"
+  anti_spam:
+    enabled_filter: true
+    maxim_words: 3
+    maxim_words_in_seconds: 5
+    punishment:
+      - "[CANCEL]"
+      - "[NOTIFY_STAFF]"
+      - "[MESSAGE] %pl_prefix% &fPlease wait a bit before sending a new message"
+  anti_swear:
+    enabled_filter: true
+    bad_words:
+      - "here_words"
+    punishment:
+      - "[CANCEL]"
+      - "[NOTIFY_STAFF]"
+      - "[MESSAGE] %pl_prefix% &fYou are not allowed to say &#ff5e62that&f bad word :("
+
+mute_chat:
+  on_mute:
+    - "[BROADCAST] &f"
+    - "[BROADCAST] <GRADIENT:#8A2387-#E94057>Chat is now  muted</GRADIENT> &7&oby %pl_player%"
+    - "[BROADCAST] &f"
+  on_unmute:
+    - "[BROADCAST] &f"
+    - "[BROADCAST] <GRADIENT:#8A2387-#E94057>Chat is not longer muted</GRADIENT> &7&oby %pl_player%"
+    - "[BROADCAST] &f"
+  on_player_tries_to_send_a_text:
+    - "[MESSAGE] <GRADIENT:#8A2387-#E94057>Chat is muted</GRADIENT>"
+
+clear_chat:
+  on_clear:
+    - "[BROADCAST] &f"
+    - "[BROADCAST] <GRADIENT:#8A2387-#E94057>Chat was clean</GRADIENT> &7&oby %pl_player%"
+    - "[BROADCAST] &f"
+
+welcome:
+  # Choose (default|custom|disabled)
+  # If its Default - will not change the message
+  #        Custom - Will run the commands down there
+  #        Disabled - Will stop the messages
+  modify_on_join: custom
+  modify_on_first_join: custom
+  modify_on_leave: custom
+  on_join:
+    - "[CUSTOM_MESSAGE] join_message"
+  on_first_join:
+    - "[MESSAGE] Hello player"
+  on_leave:
+    - "[MESSAGE] Hello player"

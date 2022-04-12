@@ -1,0 +1,11 @@
+name: TMChat
+description: High quality chat plugin
+version: 1.0
+main: net.devtm.tmchat.TMChatPlugin
+authors:
+  - MaikyDev
+  - TMDevelopment
+website: devtm.net
+commands:
+  tmchat:
+  chat:
